@@ -1,16 +1,60 @@
-# React + Vite
+# 🤖 Sunday Robotics 웹사이트 프로젝트
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+이 프로젝트는 **Sunday Robotics**의 멋진 로봇 기술과 디자인을 소개하는 웹사이트입니다. 중학생 친구들도 이해하기 쉽게 이 웹사이트가 어떻게 구성되어 있고, 어떤 순서로 작동하는지 설명해 줄게요!
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🏗️ 웹사이트의 구조 (마치 레고 블록 같아요!)
 
-## React Compiler
+웹사이트는 여러 개의 작은 부품(컴포넌트)들이 모여서 하나의 큰 페이지를 만들어요.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 1. 📂 루트 폴더 (가장 바깥쪽)
+*   **`index.html`**: 웹사이트의 가장 기본이 되는 뼈대예요. 브라우저가 가장 먼저 읽는 파일이죠.
+*   **`package.json`**: 이 프로젝트에 필요한 '재료 리스트'와 '요리법(명령어)'이 적혀 있는 설명서예요.
+*   **`vite.config.js`**: 웹사이트를 빠르고 멋지게 만들어주는 도구인 'Vite'의 설정 파일이에요.
 
-## Expanding the ESLint configuration
+### 2. 📂 `src` 폴더 (실제 코드가 들어있는 곳)
+가장 중요한 파일들이 모여있는 '심장부'예요.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+*   **`main.jsx`**: 웹사이트의 시작점! `index.html`과 우리가 만든 리액트(React) 코드를 연결해주는 다리 역할을 해요.
+*   **`App.jsx`**: 웹사이트의 전체적인 틀을 잡는 파일이에요. 여러 방(컴포넌트)들을 이 파일 안에서 조립하죠.
+*   **`App.css` / `index.css`**: 웹사이트의 옷(디자인)이에요. 색깔, 글자 크기, 간격 등을 예쁘게 꾸며줘요.
+
+### 3. 📂 `src/components` (작은 부품들)
+웹사이트의 각 부분을 담당하는 블록들이에요.
+*   **`Navbar.jsx`**: 맨 위에 있는 메뉴 바예요. (홈, 기술소개 등으로 이동하는 버튼)
+*   **`Hero.jsx`**: 웹사이트에 들어오자마자 보이는 커다란 메인 화면이에요. 사람들의 시선을 사로잡는 섹션이죠!
+*   **`Skills.jsx`**: Sunday Robotics가 어떤 능력을 가지고 있는지 보여주는 부분이에요.
+*   **`Tech.jsx`**: 사용된 기술들을 설명해주는 섹션이에요.
+*   **`DesignCarousel.jsx`**: 여러 디자인 이미지들을 옆으로 넘기며 볼 수 있는 슬라이드 쇼예요.
+
+---
+
+## 🏎️ 웹사이트가 화면에 나타나는 순서
+
+1.  **브라우저가 접속 요청을 받음**: 사용자가 사이트에 들어오면 브라우저는 먼저 `index.html`을 읽어요.
+2.  **엔진 시동 (`main.jsx`)**: `index.html`이 "자, 이제 리액트 엔진을 켜줘!"라고 `main.jsx`에게 말해요.
+3.  **설계도 확인 (`App.jsx`)**: `main.jsx`는 전체 설계도인 `App.jsx`를 가져와서 화면을 그리기 시작해요.
+4.  **부품 조립 (`components`)**: `App.jsx` 안에 적힌 순서대로 `Navbar`, `Hero`, `Tech` 같은 부품들을 순서대로 조립해서 화면에 채워 넣어요.
+5.  **옷 입히기 (`CSS`)**: 모든 조립이 끝나면 CSS 파일들이 색칠을 하고 위치를 잡아서 우리가 보는 예쁜 웹사이트가 완성돼요!
+
+---
+
+## 🛠️ 사용된 기술들
+
+*   **React (리액트)**: 부품(컴포넌트)을 만들고 관리하기 위한 도구예요.
+*   **Vite (바이트)**: 개발을 아주 빠르고 쾌적하게 도와주는 최신 도구예요.
+*   **CSS (스타일 시트)**: 웹사이트를 멋지게 꾸며주는 언어예요.
+
+---
+
+## 🚀 직접 실행해보고 싶다면?
+
+컴퓨터에 Node.js가 설치되어 있다면, 터미널에서 아래 명령어를 순서대로 입력해보세요.
+
+1.  `npm install` (필요한 재료들을 다운로드해요)
+2.  `npm run dev` (내 컴퓨터에서 웹사이트를 실행해요)
+
+---
+
+**Sunday Robotics**와 함께 로봇의 미래를 구경해 보세요! 🚀
